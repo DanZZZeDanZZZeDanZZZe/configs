@@ -14,7 +14,7 @@
 
   " set colors and theme
   set termguicolors
-  colorscheme onehalflight
+  "colorscheme onehalflight
 
   " set leader key to <Space>
   " let mapleader="\<Space>"
