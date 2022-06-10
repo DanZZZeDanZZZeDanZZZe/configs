@@ -56,9 +56,6 @@ exec --no-startup-id ~/.screenlayout/layout-1.sh
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec kitty
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -67,7 +64,7 @@ bindsym $submod+e exec rofi -show run
 # start rofi for run apps from .desktop files (as a program launcher)
 bindsym $submod+r exec rofi -show drun
 # start rofi use all sources
-bindsym $submod+g exec "rofi -show combi -combi-modi 'drun,run,window' -modi combi"
+bindsym $mod+Return exec "rofi -show combi -combi-modi 'drun,run,window' -modi combi"
 # start rofi (as a window launcher)
 bindsym $submod+t exec rofi -show window
 
@@ -228,20 +225,23 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
-bar {
-  status_command polybar
-  colors {
-    background #282A36
-    statusline #F8F8F2
-    separator  #44475A
+#bar {
+#  status_command polybar
+#  colors {
+#    background #282A36
+#    statusline #F8F8F2
+#    separator  #44475A
+#
+#    focused_workspace  #44475A #44475A #F8F8F2
+#    active_workspace   #282A36 #44475A #F8F8F2
+#    inactive_workspace #282A36 #282A36 #BFBFBF
+#    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#    binding_mode       #FF5555 #FF5555 #F8F8F2
+#  }
+#}
 
-    focused_workspace  #44475A #44475A #F8F8F2
-    active_workspace   #282A36 #44475A #F8F8F2
-    inactive_workspace #282A36 #282A36 #BFBFBF
-    urgent_workspace   #FF5555 #FF5555 #F8F8F2
-    binding_mode       #FF5555 #FF5555 #F8F8F2
-  }
-}
+# launch polybar
+exec_always --no-startup-id $HOME/.config/i3/launch-polybar.sh
 
 bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 
