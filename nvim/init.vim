@@ -85,6 +85,9 @@ Plug 'phaazon/hop.nvim'
 " Better code highlight
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+" Colorize hex color codes
+Plug 'ap/vim-css-color'
+
 call plug#end()
 
 " ===================================================================================
