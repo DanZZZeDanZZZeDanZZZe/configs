@@ -52,8 +52,10 @@ if !has('gui_running')
 endif
 " enable true colors support "
 set termguicolors
-" Vim colorscheme "
-colorscheme desert
+" use colorscheme "
+colorscheme solarized8
+" use background light/dark
+set background = light
 
 "-------------------------------------------------------------"
 "Bonus. " Find & Replace (if you use the ignorecase, smartcase these are mandatory) "
