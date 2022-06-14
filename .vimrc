@@ -40,11 +40,11 @@ set autoindent
 " show the matching part of pairs [] {} and () "
 set showmatch
 
-" remove trailing whitespace from Python and Fortran files "
-autocmd BufWritePre *.py :%s/\s\+$//e
-autocmd BufWritePre *.f90 :%s/\s\+$//e
-autocmd BufWritePre *.f95 :%s/\s\+$//e
-autocmd BufWritePre *.for :%s/\s\+$//e
+" remove trailing whitespace from js, html, css, ts files "
+autocmd BufWritePre *.js :%s/\s\+$//e
+autocmd BufWritePre *.html :%s/\s\+$//e
+autocmd BufWritePre *.css :%s/\s\+$//e
+autocmd BufWritePre *.ts :%s/\s\+$//e
 
 " enable color themes "
 if !has('gui_running')
