@@ -1,40 +1,40 @@
-  " ===================================================================================
-  " NEOVIM CONFIG
-  " ~/.config/nvim/init.vim
-  " ===================================================================================
+" ===================================================================================
+" NEOVIM CONFIG
+" ~/.config/nvim/init.vim
+" ===================================================================================
 
-  " use mouse
-  set mouse=a
+" use mouse
+set mouse=a
 
-  " show line numbers
-  set number
+" show line numbers
+set number
 
-  " use system register for copy and past
-  set clipboard=unnamedplus
+" use system register for copy and past
+set clipboard=unnamedplus
 
-  " set colors and theme
-  set termguicolors
-  "colorscheme onehalflight
+" set colors and theme
+set termguicolors
+"colorscheme onehalflight
 
-  " set leader key to <Space>
-  " let mapleader="\<Space>"
+" set leader key to <Space>
+" let mapleader="\<Space>"
 
-  " Spaces & Tabs
-  set tabstop=2       " number of visual spaces per TAB
-  set softtabstop=2   " number of spaces in tab when editing
-  set shiftwidth=2    " number of spaces to use for autoindent
-  set expandtab       " tabs are space
-  set autoindent
-  set copyindent      " copy indent from the previous lines
+" Spaces & Tabs
+set tabstop=2       " number of visual spaces per TAB
+set softtabstop=2   " number of spaces in tab when editing
+set shiftwidth=2    " number of spaces to use for autoindent
+set expandtab       " tabs are space
+set autoindent
+set copyindent      " copy indent from the previous lines
 
-  " ===================================================================================
-  " ALE
-  " ===================================================================================
+" ===================================================================================
+" ALE
+" ===================================================================================
 
-  let g:ale_completion_enabled = 1
-  let g:ale_completion_autoimport = 1
-  let g:ale_sign_column_always = 1
-  let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
+let g:ale_sign_column_always = 1
+let g:ale_fix_on_save = 1
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = ''
 
@@ -68,9 +68,7 @@ Plug 'dense-analysis/ale'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-" Tabs for buffers
-" https://github.com/akinsho/bufferline.nvim
-Plug 'kyazdani41/nvim-web-devicons' " Recommended (for coloured icons)
+Plug 'kyazdani41/nvim-web-devicons' " use bufferline extension
 " Plug 'ryanoasis/vim-devicons' " Icons without colours
 
 " Tabs
