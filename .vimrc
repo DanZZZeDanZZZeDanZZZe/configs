@@ -9,6 +9,9 @@ syntax on
 " enable line numbers "
 set number
 
+" use system register for copy and past
+set clipboard=unnamedplus
+
 " highlight current line "
 set cursorline
 :highlight Cursorline cterm=bold ctermbg=black
