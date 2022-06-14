@@ -78,8 +78,8 @@ bindsym $submod+l exec i3lock --color=282A36
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # toggle tabs
-bindsym $submod+Tab focus right
-bindsym $submod+Shift+Tab focus left
+bindsym $submod+Tab exec "$HOME/.config/i3/i3-alt-tab.py n"
+bindsym $submod+Shift+Tab exec "$HOME/.config/i3/i3-alt-tab.py p"
 
 # change focus
 bindsym $mod+j focus left
@@ -127,6 +127,9 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+
+# set border for focused windows
+for_window [class="^.*"] border pixel 6
 
 # focus the child container
 #bindsym $mod+d focus child
