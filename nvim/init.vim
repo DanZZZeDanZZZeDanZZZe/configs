@@ -60,7 +60,7 @@ endif
 " enable true colors support "
 set termguicolors
 " use colorscheme "
-colorscheme solarized8
+colorscheme dracula
 " use background light/dark
 set background = light
 
