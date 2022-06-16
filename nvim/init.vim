@@ -62,7 +62,7 @@ set termguicolors
 " use colorscheme "
 colorscheme dracula
 " use background light/dark
-set background = light
+set background = dark
 
 "-------------------------------------------------------------"
 "Bonus. " Find & Replace (if you use the ignorecase, smartcase these are mandatory) "
@@ -142,10 +142,16 @@ set wildmenu
 " FILE BROWSING:
 
 " Tweaks for browsing
-" let g:netrw_banner=0        " disable annoying banner
+let g:netrw_banner=0        " disable annoying banner
 let g:netrw_browse_split=4  " open in prior window
 let g:netrw_altv=1          " open splits to the right
 let g:netrw_liststyle=3     " tree view
+let g:netrw_winsize = 25
+
+augroup ProjectDrawer " auto open
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
 " let g:netrw_list_hide=netrw_gitignore#Hide()
 " let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
@@ -211,8 +217,11 @@ Plug 'dense-analysis/ale'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'kyazdani41/nvim-web-devicons' " use bufferline extension
+Plug 'kyazdani42/nvim-web-devicons' " use bufferline extension
 " Plug 'ryanoasis/vim-devicons' " Icons without colours
+
+" File explorer
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Tabs
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
@@ -249,15 +258,6 @@ local hop = require('hop')
 hop.setup()
 EOF
 
-" ===================================================================================
-" Telescope
-" ===================================================================================
-
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
 " close popup by the q key
 lua << EOF
 local actions = require('telescope.actions')
@@ -274,6 +274,15 @@ require('telescope').setup{
 EOF
 
 " TODO: разобраться с расширением для табов
+
+" ===================================================================================
+
+" ===================================================================================
+
+lua << EOF
+require'nvim-tree'.setup {
+}
+EOF
 
 " ===================================================================================
 " Imports
