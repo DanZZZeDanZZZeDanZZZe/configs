@@ -53,3 +53,11 @@ nnoremap <leader>tf :NvimTreeFindFile<CR>
 " ===================================================================================
 
 nnoremap <C-h> :HopWord<CR>
+
+" ===================================================================================
+" Ale
+" ===================================================================================
+
+nnoremap <leader>aa :ALEHover<CR>
+nnoremap <leader>ad :ALEGoToDefenition<CR>
+nnoremap <leader>at :ALEGoToTypeDefenition<CR>

@@ -54,15 +54,16 @@ autocmd BufWritePre *.css :%s/\s\+$//e
 autocmd BufWritePre *.ts :%s/\s\+$//e
 
 " enable color themes "
-if !has('gui_running')
-	set t_Co=256
-endif
+"if !has('gui_running')
+"	set t_Co=256
+"endif
 " enable true colors support "
+"syntax on
 set termguicolors
 " use colorscheme "
-colorscheme dracula
+colorscheme onehalflight
 " use background light/dark
-set background = dark
+" set background = dark
 
 "-------------------------------------------------------------"
 "Bonus. " Find & Replace (if you use the ignorecase, smartcase these are mandatory) "
@@ -142,16 +143,16 @@ set wildmenu
 " FILE BROWSING:
 
 " Tweaks for browsing
-let g:netrw_banner=0        " disable annoying banner
-let g:netrw_browse_split=4  " open in prior window
-let g:netrw_altv=1          " open splits to the right
-let g:netrw_liststyle=3     " tree view
-let g:netrw_winsize = 25
+" let g:netrw_banner=0        " disable annoying banner
+" let g:netrw_browse_split=4  " open in prior window
+" let g:netrw_altv=1          " open splits to the right
+" let g:netrw_liststyle=3     " tree view
+"let g:netrw_winsize = 25
 
-augroup ProjectDrawer " auto open
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
+"augroup ProjectDrawer " auto open
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+" augroup END
 " let g:netrw_list_hide=netrw_gitignore#Hide()
 " let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
@@ -184,8 +185,14 @@ let g:ale_completion_enabled = 1
 let g:ale_completion_autoimport = 1
 let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
-let g:ale_sign_error = '✗'
+let g:ale_sign_error = 'x'
 let g:ale_sign_warning = ''
+
+" Declare my file types
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
 
 " Use fixers
 let js_fixers = ['prettier', 'eslint']
@@ -193,7 +200,7 @@ let js_fixers = ['prettier', 'eslint']
 let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ 'javascript': js_fixers,
-\ 'javascript.jsx': js_fixers,
+\ 'jsx': js_fixers,
 \ 'typescript': js_fixers,
 \ 'typescriptreact': js_fixers,
 \ 'css': ['prettier'],
